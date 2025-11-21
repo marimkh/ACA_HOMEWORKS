@@ -67,23 +67,32 @@
 //            Console.WriteLine("Result: ");
 //            for (int j = 0; j < frequency.Length; j++)
 //            {
-//                Console.WriteLine(j+ " - " + frequency[j]);
+//                Console.WriteLine(j + " - " + frequency[j]);
 //            }
 //        }
 
 //        static int[] Frequency(int[] array)
 //        {
-//            int[] count = new int[20];
+//            int maxValue = array[0];
+//            for (int i = 1; i < array.Length; i++)
+//            {
+//                if (array[i] > maxValue)
+//                    maxValue = array[i];
+//            }
+
+//            int[] count = new int[maxValue + 1];
 //            for (int i = 0; i < array.Length; i++)
 //            {
 //                int value = array[i];
 //                count[value]++;
 //            }
 
+
 //            return count;
 //        }
-//        }
+
 //    }
+//}
 
 //3
 //using System;
@@ -135,11 +144,8 @@
 //            for (int i = 0; i < 4; i++)
 //            {
 //                for (int j = 0; j < 4; j++)
-//                {
-//                    if (i == j)
-//                    {
-//                        sum2 += matrix[i, 4 - 1 - i];
-//                    }
+//                {                            
+//                        sum2 += matrix[i, 4 - 1 - i];                   
 //                }
 //            }
 //            return sum2;
@@ -191,55 +197,55 @@
 //}
 
 //5
-using System;
-namespace ConsoleApp2
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Input n: ");
-            int n = int.Parse(Console.ReadLine());
-            Console.WriteLine("Input m: ");
-            int m = int.Parse(Console.ReadLine());
-            Random random = new Random();
-            int[,] matrix = new int[n, m];
-            Console.WriteLine("nxm matrix");
-            for(int i = 0; i < n; i++)
-            {
-                for(int j = 0; j<m; j++)
-                {
-                    matrix[i, j] = random.Next(-15, 15);
-                    Console.Write(matrix[i, j] + "\t");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("Input i: ");
-            int row = int.Parse(Console.ReadLine());
-            Console.WriteLine("Input j: ");
-            int col = int.Parse(Console.ReadLine());
-            int result = sum(matrix,n,m,row,col);
-            Console.WriteLine(result);
-        }
+//using System;
+//namespace ConsoleApp2
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("Input n: ");
+//            int n = int.Parse(Console.ReadLine());
+//            Console.WriteLine("Input m: ");
+//            int m = int.Parse(Console.ReadLine());
+//            Random random = new Random();
+//            int[,] matrix = new int[n, m];
+//            Console.WriteLine("nxm matrix");
+//            for(int i = 0; i < n; i++)
+//            {
+//                for(int j = 0; j<m; j++)
+//                {
+//                    matrix[i, j] = random.Next(-15, 15);
+//                    Console.Write(matrix[i, j] + "\t");
+//                }
+//                Console.WriteLine();
+//            }
+//            Console.WriteLine("Input i: ");
+//            int row = int.Parse(Console.ReadLine());
+//            Console.WriteLine("Input j: ");
+//            int col = int.Parse(Console.ReadLine());
+//            int result = sum(matrix,n,m,row,col);
+//            Console.WriteLine(result);
+//        }
 
-        static int sum(int[,] matrix,int n,int m,int row,int col)
-        {
-            int sum = 0;
-            Console.WriteLine("Neighbors: ");
-            for (int i = 0; i < n; i++)
-            {
-                for(int j = 0; j < m; j++)
-                {
-                    if (Math.Abs(i-row) <=1 && Math.Abs(j-col)<=1 && !(i == row && j == col))
-                    {
-                        Console.Write(matrix[i, j] + "\t");
-                        sum += matrix[i, j];
-                    }
-                }
-            }
-            Console.WriteLine("Sum of the neighbors: ");
-            return sum;
-        }
-    }
-}
+//        static int sum(int[,] matrix,int n,int m,int row,int col)
+//        {
+//            int sum = 0;
+//            Console.WriteLine("Neighbors: ");
+//            for (int i = 0; i < n; i++)
+//            {
+//                for(int j = 0; j < m; j++)
+//                {
+//                    if (Math.Abs(i-row) <=1 && Math.Abs(j-col)<=1 && !(i == row && j == col))
+//                    {
+//                        Console.Write(matrix[i, j] + "\t");
+//                        sum += matrix[i, j];
+//                    }
+//                }
+//            }
+//            Console.WriteLine("Sum of the neighbors: ");
+//            return sum;
+//        }
+//    }
+//}
 
