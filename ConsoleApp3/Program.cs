@@ -98,7 +98,7 @@
 
 //        static string Repeat(string pattern, int n)
 //        {
-//            StringBuilder sb = new StringBuilder();
+//            StringBuilder sb = new StringBuilder(n * pattern.Length);
 //            for(int i = 0; i<n; i++)
 //            {
 //                sb.Append(pattern);
